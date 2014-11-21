@@ -6,7 +6,7 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
     p.implements(p.IDatasetForm)
     p.implements(p.IConfigurer)
 
-    def _modify_package_schema(self, schema):
+    def modify_package_schema(self, schema):
         schema.update({
             'identifier': [],
             'title': [],
