@@ -24,7 +24,7 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             'distribution': []
             'theme': []
             'definition': []
-        })
+			})
         return schema
 	
 	def create_package_schema(self):
