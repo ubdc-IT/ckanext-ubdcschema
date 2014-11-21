@@ -8,8 +8,22 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
 	
 	def _modify_package_schema(self, schema):
         schema.update({
-            'custom_text': [tk.get_validator('ignore_missing'),
-                            tk.get_converter('convert_to_extras')]
+            'identifier': []
+            'title': []
+            'contactPoint': []
+            'description': []
+            'landingPage': []
+            'issued': []
+            'modified': []
+            'language': []
+            'spatial': []
+            'temporal': []
+            'accrualPeriodicity': []
+            'publisher': []
+            'keyword': []
+            'distribution': []
+            'theme': []
+            'definition': []
         })
         return schema
 	
