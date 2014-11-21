@@ -25,6 +25,6 @@ setup(
     entry_points='''
         [ckan.plugins]
         # Add plugins here, e.g.
-        # myplugin=ckanext.ubdcschema.plugin:PluginClass
+        ubdc_dcatSchema=ckanext.ubdcschema.plugin:ExampleIDatasetFormPlugin
     ''',
 )
