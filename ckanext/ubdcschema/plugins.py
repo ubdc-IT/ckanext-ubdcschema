@@ -46,10 +46,7 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
 
 	def show_package_schema(self):
         schema = super(ExampleIDatasetFormPlugin, self).show_package_schema()
-        schema.update({
-            'custom_text': [tk.get_converter('convert_from_extras'),
-                            tk.get_validator('ignore_missing')]
-        })
+        schema = self.modify_package_schema(schema)
         return schema
         
 	def is_fallback(self):
