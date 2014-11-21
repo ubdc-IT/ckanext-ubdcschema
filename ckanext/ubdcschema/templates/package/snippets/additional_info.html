@@ -1,16 +1,16 @@
 {% ckan_extends %}
 
-{% block extras %}
-  {% if pkg_dict.identifier %}
+{% block package_additional_info %}
+  {% if pkg_dict.issued %}
     <tr>
-      <th scope="row" class="dataset-label">{{ _("Identifier") }}</th>
-      <td class="dataset-details">{{ pkg_dict.identifier }}</td>
+      <th scope="row" class="dataset-label">{{ _("Issued") }}</th>
+      <td class="dataset-details" property="dct:issued">{{ pkg_dict.issued }}</td>
     </tr>
   {% endif %}
-  {% if pkg_dict.title %}
+  {% if pkg_dict.modified %}
     <tr>
-      <th scope="row" class="dataset-label">{{ _("Title") }}</th>
-      <td class="dataset-details">{{ pkg_dict.title }}</td>
+      <th scope="row" class="dataset-label">{{ _("Modified") }}</th>
+      <td class="dataset-details" property="dct:modified">{{ pkg_dict.modified }}</td>
     </tr>
   {% endif %}
 {% endblock %}
