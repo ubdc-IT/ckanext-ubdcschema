@@ -27,7 +27,7 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             'spatial': [tk.get_validator('ignore_missing')],
             'temporal': [tk.get_validator('ignore_missing')],
             'accrualPeriodicity': [tk.get_validator('ignore_missing')],
-            'publisher': publisher_schema(),
+            #'publisher': publisher_schema(),
             'keyword': [tk.get_validator('ignore_missing')],
             'distribution': [tk.get_validator('ignore_missing')],
             'theme': [tk.get_validator('ignore_missing')],
