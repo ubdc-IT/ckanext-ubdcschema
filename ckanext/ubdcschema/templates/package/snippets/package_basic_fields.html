@@ -30,8 +30,8 @@
   {{ form.input('spatial', label=_('spatial'), id='field-spatial', placeholder=_('spatial'), value=data.spatial, error=errors.spatial, classes=['control-medium']) }}
   {{ form.input('temporal', label=_('temporal'), id='field-temporal', placeholder=_('temporal'), value=data.temporal, error=errors.temporal, classes=['control-medium']) }}
   {{ form.input('accrualPeriodicity', label=_('accrualPeriodicity'), id='field-accrualPeriodicity', placeholder=_('accrualPeriodicity'), value=data.accrualPeriodicity, error=errors.accrualPeriodicity, classes=['control-medium']) }}
-  {{ form.input('', label=_('Publisher:Name'), id='field-publisherName', placeholder=_('Publisher's Name'), value=data.publisher.name, error=errors.publisher.name, classes=['control-medium']) }}
-  {{ form.input('', label=_('Publisher:Email'), id='field-publisherEmail', placeholder=_('Publisher's Email'), value=data.publisher.mbox, error=errors.publisher.mbox, classes=['control-medium']) }}
-  {{ form.input('', label=_('Publisher:Homepage'), id='field-publisherHomepage', placeholder=_('Publisher's Homepage'), value=data.publisher.homepage, error=errors.publisher.homepage, classes=['control-medium']) }}
+  {{ form.input('', label=_('Publisher:Name'), id='field-publisherName', placeholder=_('Publishers Name'), value=data.publisher.name, error=errors.publisher.name, classes=['control-medium']) }}
+  {{ form.input('', label=_('Publisher:Email'), id='field-publisherEmail', placeholder=_('Publishers Email'), value=data.publisher.mbox, error=errors.publisher.mbox, classes=['control-medium']) }}
+  {{ form.input('', label=_('Publisher:Homepage'), id='field-publisherHomepage', placeholder=_('Publishers Homepage'), value=data.publisher.homepage, error=errors.publisher.homepage, classes=['control-medium']) }}
   {{ form.input('', label=_('Keyword'), id='field-keyword', placeholder=_('keyword'), value=data.publisher.keyword, error=errors.publisher.keyword, classes=['control-medium']) }}
 {% endblock %}
