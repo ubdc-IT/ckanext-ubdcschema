@@ -37,24 +37,7 @@
       <td class="dataset-details" property="dct:accrualPeriodicity">{{ pkg_dict.accrualPeriodicity }}</td>
     </tr>
   {% endif %}
-  {% if pkg_dict.publisher.name %}
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Publisher Name") }}</th>
-      <td class="dataset-details" property="foaf:name">{{ pkg_dict.publisher.name }}</td>
-    </tr>
-  {% endif %}
-  {% if pkg_dict.publisher.mbox %}
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Publisher Email") }}</th>
-      <td class="dataset-details" property="foaf:mbox">{{ pkg_dict.publisher.mbox }}</td>
-    </tr>
-  {% endif %}
-  {% if pkg_dict.publisher.homepage %}
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Publisher Homepage") }}</th>
-      <td class="dataset-details" property="foaf:homepage">{{ pkg_dict.publisher.homepage }}</td>
-    </tr>
-  {% endif %}
+  
   {% if pkg_dict.keyword %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Keyword") }}</th>
