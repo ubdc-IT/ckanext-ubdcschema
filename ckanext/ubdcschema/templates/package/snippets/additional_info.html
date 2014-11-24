@@ -13,4 +13,52 @@
       <td class="dataset-details" property="dct:modified">{{ pkg_dict.modified }}</td>
     </tr>
   {% endif %}
+  {% if pkg_dict.language %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Language") }}</th>
+      <td class="dataset-details" property="dct:language">{{ pkg_dict.language }}</td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.spatial %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Spatial") }}</th>
+      <td class="dataset-details" property="dct:spatial">{{ pkg_dict.spatial }}</td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.temporal %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Temporal") }}</th>
+      <td class="dataset-details" property="dct:temporal">{{ pkg_dict.temporal }}</td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.accrualPeriodicity %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Accrual Periodicity") }}</th>
+      <td class="dataset-details" property="dct:accrualPeriodicity">{{ pkg_dict.accrualPeriodicity }}</td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.publisher.name %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Publisher Name") }}</th>
+      <td class="dataset-details" property="foaf:name">{{ pkg_dict.publisher.name }}</td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.publisher.mbox %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Publisher Email") }}</th>
+      <td class="dataset-details" property="foaf:mbox">{{ pkg_dict.publisher.mbox }}</td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.publisher.homepage %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Publisher Homepage") }}</th>
+      <td class="dataset-details" property="foaf:homepage">{{ pkg_dict.publisher.homepage }}</td>
+    </tr>
+  {% endif %}
+  {% if pkg_dict.keyword %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("Keyword") }}</th>
+      <td class="dataset-details" property="dcat:keyword">{{ pkg_dict.keyword }}</td>
+    </tr>
+  {% endif %}
 {% endblock %}
