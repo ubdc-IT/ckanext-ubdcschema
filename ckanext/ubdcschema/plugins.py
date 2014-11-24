@@ -1,21 +1,20 @@
 import ckan.plugins as p
 import ckan.plugins.toolkit as tk
 
+def publisher_schema():
+    schema = {
+        'name': [tk.get_validator('ignore_missing')],
+        'mbox': [tk.get_validator('ignore_missing')],
+        'homepage': [tk.get_validator('ignore_missing')],
+    }
+    return schema
 
 class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
     p.implements(p.IDatasetForm)
     p.implements(p.IConfigurer)
-	
-	def publisher_schema():
-		schema = {
-			'name' : [],
-			'mbox' : [],
-			'homepage' : []
-			}
-			return schema
-	
+
     def modify_package_schema(self, schema):
-        #set custom dataset schema 
+        #set custom dataset schema
         schema.update({
             'identifier': [tk.get_validator('ignore_missing')],
             'title': [tk.get_validator('ignore_missing')],
@@ -34,20 +33,20 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             'theme': [tk.get_validator('ignore_missing')],
             'definition': [tk.get_validator('ignore_missing')]
         })
-        #set custom resource schema 
+        #set custom resource schema
         schema['resources'].update({
-                'title' : [ tk.get_validator('ignore_missing') ],
-                'description' : [ tk.get_validator('ignore_missing') ],
-                'issued' : [ tk.get_validator('ignore_missing') ],
-                'modified' : [ tk.get_validator('ignore_missing') ],
-                'license' : [ tk.get_validator('ignore_missing') ],
-                'rights' : [ tk.get_validator('ignore_missing') ],
-                'accessURL' : [ tk.get_validator('ignore_missing') ],
-                'downloadURL' : [ tk.get_validator('ignore_missing') ],
-                'mediaType' : [ tk.get_validator('ignore_missing') ],
-                'format' : [ tk.get_validator('ignore_missing') ],
-                'byteSize' : [ tk.get_validator('ignore_missing') ]
-                })
+            'title': [tk.get_validator('ignore_missing')],
+            'description': [tk.get_validator('ignore_missing')],
+            'issued': [tk.get_validator('ignore_missing')],
+            'modified': [tk.get_validator('ignore_missing')],
+            'license': [tk.get_validator('ignore_missing')],
+            'rights': [tk.get_validator('ignore_missing')],
+            'accessURL': [tk.get_validator('ignore_missing')],
+            'downloadURL': [tk.get_validator('ignore_missing')],
+            'mediaType': [tk.get_validator('ignore_missing')],
+            'format': [tk.get_validator('ignore_missing')],
+            'byteSize': [tk.get_validator('ignore_missing')]
+            })
         return schema
 
     def create_package_schema(self):
