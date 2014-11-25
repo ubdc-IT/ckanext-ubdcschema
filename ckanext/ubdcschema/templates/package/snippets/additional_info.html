@@ -4,44 +4,44 @@
   {% if pkg_dict.issued %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Issued") }}</th>
-      <td class="dataset-details" property="dct:issued">{{ pkg_dict.issued }}</td>
+      <td class="dataset-details">{{ pkg_dict.issued }}</td>
     </tr>
   {% endif %}
   {% if pkg_dict.modified %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Modified") }}</th>
-      <td class="dataset-details" property="dct:modified">{{ pkg_dict.modified }}</td>
+      <td class="dataset-details">{{ pkg_dict.modified }}</td>
     </tr>
   {% endif %}
   {% if pkg_dict.language %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Language") }}</th>
-      <td class="dataset-details" property="dct:language">{{ pkg_dict.language }}</td>
+      <td class="dataset-details">{{ pkg_dict.language }}</td>
     </tr>
   {% endif %}
   {% if pkg_dict.spatial %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Spatial") }}</th>
-      <td class="dataset-details" property="dct:spatial">{{ pkg_dict.spatial }}</td>
+      <td class="dataset-details">{{ pkg_dict.spatial }}</td>
     </tr>
   {% endif %}
   {% if pkg_dict.temporal %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Temporal") }}</th>
-      <td class="dataset-details" property="dct:temporal">{{ pkg_dict.temporal }}</td>
+      <td class="dataset-details">{{ pkg_dict.temporal }}</td>
     </tr>
   {% endif %}
   {% if pkg_dict.accrualPeriodicity %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Accrual Periodicity") }}</th>
-      <td class="dataset-details" property="dct:accrualPeriodicity">{{ pkg_dict.accrualPeriodicity }}</td>
+      <td class="dataset-details">{{ pkg_dict.accrualPeriodicity }}</td>
     </tr>
   {% endif %}
   
   {% if pkg_dict.keyword %}
     <tr>
       <th scope="row" class="dataset-label">{{ _("Keyword") }}</th>
-      <td class="dataset-details" property="dcat:keyword">{{ pkg_dict.keyword }}</td>
+      <td class="dataset-details">{{ pkg_dict.keyword }}</td>
     </tr>
   {% endif %}
 {% endblock %}
