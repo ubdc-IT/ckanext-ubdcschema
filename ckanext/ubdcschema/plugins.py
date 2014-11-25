@@ -1,13 +1,13 @@
 import ckan.plugins as p
 import ckan.plugins.toolkit as tk
 
-def publisher_schema():
-    schema = {
-        'name': [tk.get_validator('ignore_missing')],
-        'mbox': [tk.get_validator('ignore_missing')],
-        'homepage': [tk.get_validator('ignore_missing')],
-    }
-    return schema
+#def publisher_schema():
+#    schema = {
+#        'name': [tk.get_validator('ignore_missing')],
+#        'mbox': [tk.get_validator('ignore_missing')],
+#        'homepage': [tk.get_validator('ignore_missing')],
+#    }
+#    return schema
 
 class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
     p.implements(p.IDatasetForm)
@@ -16,6 +16,7 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
     def modify_package_schema(self, schema):
         #set custom dataset schema
         schema.update({
+            #dcat schema
             'identifier': [tk.get_validator('ignore_missing')],
             'title': [tk.get_validator('ignore_missing')],
             'contactPoint': [tk.get_validator('ignore_missing')],
@@ -31,7 +32,9 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             'keyword': [tk.get_validator('ignore_missing')],
             'distribution': [tk.get_validator('ignore_missing')],
             'theme': [tk.get_validator('ignore_missing')],
-            'definition': [tk.get_validator('ignore_missing')]
+            'definition': [tk.get_validator('ignore_missing')],
+            # ignore default schema (not already ingored)
+            'name': [tk.get_validator('ignore_missing')],
         })
         #set custom resource schema
         schema['resources'].update({
@@ -50,7 +53,7 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
         return schema
 
     def create_package_schema(self):
-        #schema = super(ExampleIDatasetFormPlugin, self).create_package_schema()
+        schema = super(ExampleIDatasetFormPlugin, self).create_package_schema()
         #add files from modify_package_schema
         schema = self.modify_package_schema(schema)
         return schema
@@ -61,13 +64,13 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
         tk.add_template_directory(config, 'templates')
 
     def update_package_schema(self):
-        #schema = super(ExampleIDatasetFormPlugin, self).update_package_schema()
+        schema = super(ExampleIDatasetFormPlugin, self).update_package_schema()
         #add files from modify_package_schema
         schema = self.modify_package_schema(schema)
         return schema
 
     def show_package_schema(self):
-        #schema = super(ExampleIDatasetFormPlugin, self).show_package_schema()
+        schema = super(ExampleIDatasetFormPlugin, self).show_package_schema()
         schema = self.modify_package_schema(schema)
         return schema
 
