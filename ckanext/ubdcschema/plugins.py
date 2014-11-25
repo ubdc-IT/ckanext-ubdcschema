@@ -50,7 +50,7 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
         return schema
 
     def create_package_schema(self):
-        schema = super(ExampleIDatasetFormPlugin, self).create_package_schema()
+        #schema = super(ExampleIDatasetFormPlugin, self).create_package_schema()
         #add files from modify_package_schema
         schema = self.modify_package_schema(schema)
         return schema
@@ -61,13 +61,13 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
         tk.add_template_directory(config, 'templates')
 
     def update_package_schema(self):
-        schema = super(ExampleIDatasetFormPlugin, self).update_package_schema()
+        #schema = super(ExampleIDatasetFormPlugin, self).update_package_schema()
         #add files from modify_package_schema
         schema = self.modify_package_schema(schema)
         return schema
 
     def show_package_schema(self):
-        schema = super(ExampleIDatasetFormPlugin, self).show_package_schema()
+        #schema = super(ExampleIDatasetFormPlugin, self).show_package_schema()
         schema = self.modify_package_schema(schema)
         return schema
 
