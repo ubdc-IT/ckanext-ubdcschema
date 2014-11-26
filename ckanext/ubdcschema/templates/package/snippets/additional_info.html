@@ -1,62 +1,9 @@
-<section class="additional-info">
-<h3>{{ _('Metadata') }}</h3>
-<table class="table table-striped table-bordered table-condensed">
-<thead>
+{% ckan_extends %}
+{% block extras %}
+{% if pkg_dict.custom_text %}
 <tr>
-<th scope="col">{{ _('Field') }}</th>
-<th scope="col">{{ _('Value') }}</th>
-</tr>
-</thead>
-<tbody>
-{% block package_additional_info %}
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Issued") }}</th>
-      <td class="dataset-details">{{ pkg_dict.issued }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Modified") }}</th>
-      <td class="dataset-details">{{ pkg_dict.modified }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Language") }}</th>
-      <td class="dataset-details">{{ pkg_dict.language }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Spatial") }}</th>
-      <td class="dataset-details">{{ pkg_dict.spatial }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Temporal") }}</th>
-      <td class="dataset-details">{{ pkg_dict.temporal }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Accrual Periodicity") }}</th>
-      <td class="dataset-details">{{ pkg_dict.accrualPeriodicity }}</td>
-    </tr>
-    <tr>
-      <th scope="row" class="dataset-label">{{ _("Keyword") }}</th>
-      <td class="dataset-details">{{ pkg_dict.keyword }}</td>
-    </tr>
-{% endblock %}
-</tbody>
-</table>
-<h3>{{ _('Custom Metadata') }}</h3>
-<table class="table table-striped table-bordered table-condensed">
-<thead>
-<tr>
-<th scope="col">{{ _('Field') }}</th>
-<th scope="col">{{ _('Value') }}</th>
-</tr>
-</thead>
-<tbody>
-{% for extra in pkg_dict.get('extras', []) %}
-{% if not extra['key'].startswith('harvest_') %}
-<tr>
-<th scope="row" class="dataset-label">{{ extra['key'] }}</th>
-<td class="dataset-details">{{ extra['value'] }}</td>
+<th scope="row" class="dataset-label">{{ _("Custom Text") }}</th>
+<td class="dataset-details">{{ pkg_dict.language }}</td>
 </tr>
 {% endif %}
-{% endfor %}
-</tbody>
-</table>
-</section>
+{% endblock %}
