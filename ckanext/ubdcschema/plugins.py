@@ -13,65 +13,194 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
     p.implements(p.IDatasetForm)
     p.implements(p.IConfigurer)
 
-    def modify_package_schema(self, schema):
+    def _modify_package_schema(self, schema):
         #set custom dataset schema
         schema.update({
             #dcat schema
-            'identifier': [tk.get_validator('ignore_missing')],
-            'title': [tk.get_validator('ignore_missing')],
-            'contactPoint': [tk.get_validator('ignore_missing')],
-            'description': [tk.get_validator('ignore_missing')],
-            'landingPage': [tk.get_validator('ignore_missing')],
-            'issued': [tk.get_validator('ignore_missing')],
-            'modified': [tk.get_validator('ignore_missing')],
-            'language': [tk.get_validator('ignore_missing')],
-            'spatial': [tk.get_validator('ignore_missing')],
-            'temporal': [tk.get_validator('ignore_missing')],
-            'accrualPeriodicity': [tk.get_validator('ignore_missing')],
+            'identifier': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'title': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'contactPoint': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'description': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'landingPage': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'issued': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'modified': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'language': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'spatial': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'temporal': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'accrualPeriodicity': [tk.get_validator('ignore_missing')]
+        })
             #'publisher': publisher_schema(),
-            'keyword': [tk.get_validator('ignore_missing')],
-            'distribution': [tk.get_validator('ignore_missing')],
-            'theme': [tk.get_validator('ignore_missing')],
-            'definition': [tk.get_validator('ignore_missing')],
+        schema.update({
+            'keyword': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'distribution': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'theme': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'definition': [tk.get_validator('ignore_missing')]
+        })
             # ignore default schema (not already ingored)
-            'name': [tk.get_validator('ignore_missing')],
+        schema.update({
+            'name': [tk.get_validator('ignore_missing')]
         })
         #set custom resource schema
         schema['resources'].update({
-            'title': [tk.get_validator('ignore_missing')],
-            'description': [tk.get_validator('ignore_missing')],
-            'issued': [tk.get_validator('ignore_missing')],
-            'modified': [tk.get_validator('ignore_missing')],
-            'license': [tk.get_validator('ignore_missing')],
-            'rights': [tk.get_validator('ignore_missing')],
-            'accessURL': [tk.get_validator('ignore_missing')],
-            'downloadURL': [tk.get_validator('ignore_missing')],
-            'mediaType': [tk.get_validator('ignore_missing')],
-            'format': [tk.get_validator('ignore_missing')],
+            'title': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'description': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'issued': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'modified': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'license': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'rights': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'accessURL': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'downloadURL': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'mediaType': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'format': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
             'byteSize': [tk.get_validator('ignore_missing')]
-            })
+        })
         return schema
 
     def create_package_schema(self):
         schema = super(ExampleIDatasetFormPlugin, self).create_package_schema()
         #add files from modify_package_schema
-        schema = self.modify_package_schema(schema)
+        schema = self._modify_package_schema(schema)
         return schema
-
-    def update_config(self, config):
-        # Add this plugin's templates dir to CKAN's extra_template_paths, so
-        # that CKAN will use this plugin's custom templates.
-        tk.add_template_directory(config, 'templates')
 
     def update_package_schema(self):
         schema = super(ExampleIDatasetFormPlugin, self).update_package_schema()
         #add files from modify_package_schema
-        schema = self.modify_package_schema(schema)
+        schema = self._modify_package_schema(schema)
         return schema
 
     def show_package_schema(self):
         schema = super(ExampleIDatasetFormPlugin, self).show_package_schema()
-        schema = self.modify_package_schema(schema)
+        schema.update({
+            #dcat schema
+            'identifier': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'title': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'contactPoint': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'description': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'landingPage': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'issued': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'modified': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'language': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'spatial': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'temporal': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'accrualPeriodicity': [tk.get_validator('ignore_missing')]
+        })
+            #'publisher': publisher_schema(),
+        schema.update({
+            'keyword': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'distribution': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'theme': [tk.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'definition': [tk.get_validator('ignore_missing')]
+        })
+            # ignore default schema (not already ingored)
+        schema.update({
+            'name': [tk.get_validator('ignore_missing')]
+        })
+        #set custom resource schema
+        schema['resources'].update({
+            'title': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'description': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'issued': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'modified': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'license': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'rights': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'accessURL': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'downloadURL': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'mediaType': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'format': [tk.get_validator('ignore_missing')]
+        })
+        schema['resources'].update({
+            'byteSize': [tk.get_validator('ignore_missing')]
+        })
         return schema
 
     def is_fallback(self):
