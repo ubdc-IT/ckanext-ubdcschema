@@ -139,7 +139,7 @@ class ExampleIDatasetFormPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             'modified': [tk.get_validator('ignore_missing')]
         })
         schema.update({
-            'language': [tk.get_validator('ignore_missing')]
+            'language': [tk.get_validator('ignore_missing'),tk.get_converter('convert_from_extras')]
         })
         schema.update({
             'spatial': [tk.get_validator('ignore_missing')]
